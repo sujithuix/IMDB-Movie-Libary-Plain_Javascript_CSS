@@ -1,0 +1,313 @@
+/*
+This stylesheet follows following guidelines:
+
+** Minimal usage of decendant selectors as it will reduce performance. Instead using specific classnames with proper class naming conventions
+
+** No usage of important 
+
+** No duplicate styles
+
+** Minimal Overrides to reduce effort on DOM painting
+
+*/
+
+html,
+body {
+    height: 100%;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    /* As by default is not pure block element this may create issue in some mobile browsers*/
+}
+
+[class*="_input"] {
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 7px 11px 5px 15px;
+    border-radius: 10px;
+}
+
+[type=checkbox],
+[type=radio] {
+    transform: scale(1.4)
+}
+
+label {
+    font-size: 0.9rem;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.section-label {
+    margin-left: -2px;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    font-size: 1.1rem;
+    padding-bottom: 2px;
+    font-weight: bold;
+}
+
+.warning {
+    color: #b00;
+}
+
+.abs-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.loader {
+    width: 300px;
+    height: 145px;
+    font-size: 2rem;
+    transform: translateX(100px); 
+}
+
+.loader_video {
+    width: 100%
+}
+
+.modal {
+    width: 300px;
+    height: 118px;
+    background: #444141;
+    text-align: center;
+    padding: 33px;
+    margin: auto;
+    color: #eee;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    transition: 1s all ease-out;
+}
+
+header {
+    height: 70px;
+    background: #444;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.app-header,
+.app-header_caption {
+    color: #eee;
+}
+
+.app-header {
+    font-size: 1.7rem;
+    margin-bottom: 0;
+}
+
+.app-header_caption {
+    display: block;
+    width: 200px;
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+aside {
+    width: 250px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    /* this is not the right way but asi got only one hour for entire project doing it for time being */
+    height: calc( 100vh - 75px);
+    overflow-y: auto;
+    background: #e8e8e8;
+    box-sizing: border-box;
+    padding: 30px 10px;
+    border-left: 1px solid #ddd;
+}
+
+.route-section {
+    position: relative;
+    overflow: hidden;
+    margin-left: 250px;
+    margin-top: 70px;
+}
+
+/* Search input area */
+
+.search-input-area {
+    padding: 5px;
+}
+
+.search-input-area_input {
+    width: 100%;
+    margin: 0;
+    background: transparent;
+    color: #ddd;
+    border: 1px solid #aaa;
+    outline: none;
+    border: 1px solid #717171;
+    transition: .7s all;
+}
+
+.search-input-area_input:focus {
+    background: #fff;
+    color: #333;
+}
+
+.page-header {
+    background: #f9fcf7;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f9fcf7 0%, #f5f9f0 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f9fcf7 0%, #f5f9f0 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f9fcf7 0%, #f5f9f0 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#f5f9f0', GradientType=0);
+    /* IE6-9 */
+    border-bottom: 1px solid #ccc;
+    padding: 15px 30px 10px;
+}
+
+.sort_label {
+    float: left;
+    width: 60px;
+    padding: 5px 0;
+}
+
+.sort_dropdown {
+    float: right;
+    width: 161px;
+}
+
+/* Movie list block */
+
+.movie-list-blocks_holder {
+    position: relative;
+    min-height: 200px;
+}
+
+.movie-list-blocks {
+    padding: 10px;
+}
+
+.movie-list-block {
+    width: 200px;
+    margin: 20px;
+    float: left;
+    border: 1px solid #ccc;
+    background: #eee;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.movie-block_title {
+    text-align: center;
+    padding: 10px;
+}
+
+.movie-block_title {
+    line-height: 1.3;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-block-image_img {
+    width: 100%;
+    height: 300px;
+}
+
+.movie-block-image_img[src="undefined"] {
+    background: #000 url(http://bunnyseries.com/wp-content/themes/TheStyle/images/no-poster.jpg) 0 0 no-repeat !important;
+    text-indent: -9999px;
+    border: 7px solid #fff;
+    color: transparent !important;
+    -webkit-appearance: none !important;
+}
+
+.movie-block_book {
+    padding: 10px;
+    text-align: center;
+}
+.director,.content{
+    padding: 6px 3px 0;
+}
+.content{
+    padding-top: 0;
+}
+.director-name{
+    font-weight: bold;
+   
+}
+.director label,.content label{
+ margin-bottom: 0;
+}
+.imdb-icon{
+width: 50px;
+position: absolute;
+bottom: 5px;
+right: 5px;
+}
+.year{
+    background: #757171;
+    padding: 1px 6px;
+    font-size: .8rem;
+    border: 1px solid #9e9b9b;
+    border-radius: 5px;
+    color: #eee;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+/* Footer */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background: #ddd;
+    border-bottom: 1px solid #ccc;
+    height: 25px;
+    font-size: 12px;
+    padding: 5px;
+}
+
+footer .warning {
+    float: right;
+    display: block;
+    margin-right: 10px;
+    color: #666;
+}
+
+@media (max-width: 767px) { 
+    aside{
+        display: none;
+    }
+    .route-section{
+        margin-left: 0;
+    }
+    header{
+        height: auto;
+    }
+    .movie-list-block{
+       width: 320px;
+    }
+    .movie-block-image_img{
+        height: auto;
+    }
+}
+.loader {
+
+    transform: translateX(70px); 
+}
